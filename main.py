@@ -1,7 +1,6 @@
 
 from budgeter import Budgeter
 
-
 def main():
     budgeter = Budgeter()
     budgeter.createBudget("skoki", 1000)
