@@ -11,7 +11,7 @@ def main():
     #budgeter.createBudget("dziwki", 2000)
     #budgeter.createBill("rent", 400)
     
-    interface.run()
+    interface.run(budgeter)
 
 
 main()
