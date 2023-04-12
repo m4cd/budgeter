@@ -54,6 +54,26 @@ class Budgeter:
         else:
             self.budgets.add(Budget(name, saldo))
 
+    def topUpBudget(self, name, saldo):
+        if not self.budgetExists(name):
+            raise LookupError("Budget Does Not Exist")
+        elif self.budgetAttainable(saldo) == False:
+            raise ValueError("Not enough funds.")
+        else:
+            for b in self.budgets:
+                if b.name == name:
+                    b.saldo += saldo
+
+    def deleteBudget(self, name):
+        if not self.budgetExists(name):
+            raise LookupError("Budget Does Not Exist")
+        else:
+            for b in self.budgets:
+                if b.name == name:
+                    self.budgets.discard(b)
+                    return
+
+
     def billExists(self, name):
         for b in self.bills:
             if b.name == name:

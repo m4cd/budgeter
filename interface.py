@@ -10,17 +10,21 @@ class Intrfc:
 Pick action:
     a. Top-up your account
     b. Create a budget
-    c. Spend budget
-    d. Create a bill
-    e. Pay the bill
-    f. Reset billing period
-    g. Print summary
-    h. Exit        
+    c. Top-up budget
+    d. Spend budget
+    e. Delete budget
+    f. Create a bill
+    g. Delete bill
+    h. Pay the bill
+    i. Reset billing period
+    j. Print summary
+    k. Exit        
 """
         )
         option = input()
         option = option.lower()
         match option:
+            # Top-up your account
             case "a":
                 value = input("How much you want to top up?\n")
                 try:
@@ -29,6 +33,8 @@ Pick action:
                     print(f"\nYour current balance is:\n{budgeter.account.saldo}\n")
                 except Exception as e:
                     print(f"Sorry, you did not provide a number. {e}\n")
+            
+            # Create a budget
             case "b":
                 try:
                     name = input("Budget name: ")
@@ -39,17 +45,62 @@ Pick action:
                     budgeter.createBudget(name, value)
                 except Exception as e:
                     print(e)
+            
+            # Top-up budget
             case "c":
-                pass
+                try:
+                    name = input("Budget name: ")
+                    print("")
+                    value = input("Budget amount: ")
+                    print("")
+                    value = float(value)
+                    budgeter.topUpBudget(name, value)
+                except Exception as e:
+                    print(e)
+            
+            # Spend budget
             case "d":
                 pass
+            
+            # Delete budget
             case "e":
-                pass
+                try:
+                    name = input("Budget name: ")
+                    print("")
+                    budgeter.deleteBudget(name)
+                except Exception as e:
+                    print(e)
+            
+            # Create a bill
             case "f":
-                pass
+                try:
+                    name = input("Bill name: ")
+                    print("")
+                    value = input("Bill amount: ")
+                    print("")
+                    value = float(value)
+                    budgeter.createBill(name, value)
+                except Exception as e:
+                    print(e)
+            
+            # Delete bill
             case "g":
-                print(budgeter)
+                pass
+            
+            # Pay the bill
             case "h":
+                pass
+
+            # Reset billing period
+            case "i":
+                pass
+            
+            # Print summary
+            case "j":
+                print(budgeter)
+            
+            # Exit
+            case "k":
                 self.__run = False
                 print("Bye...")
                 return
