@@ -5,12 +5,11 @@ from bill import Bill
 class Budgeter:
     def __init__(self):
         self.account = Account("Bank1", float(0))
-        #self.account = Account("BankAccount", float(1234))
         self.budgets = set()
         self.bills = set()
 
     def __repr__(self):
-        message = f"Account: {self.account.name}\nsaldo: {self.account.saldo}\n"
+        message = f"Account: {self.account.name}\nSaldo: {self.account.saldo}\n"
         message += f"Money left: {self.moneyLeft()}\n\n"
         
         

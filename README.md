@@ -7,19 +7,23 @@ Planning our home budgets having one account can be difficult. Usually we do not
 ## Components:
 
 ### Account
-The assumption is we operate within one account. You can treat it as one bank account when you have all your money for different purposes
+The assumption is we operate within one account. You can treat it as one bank account when you have all your money for different purposes. You can top-up your account whenever you want to.
+
+It has two parameters printed in the summary:
+- saldo - it is the amount of money you have on your account. It changes when you spend the money you have in your budgets or pay your bills
+- money left - it is the amount of money you can spend on everyday life. It takes into account that you will spend all you have in your budgets and pay all your bills.
 
 ### Budget
 Budget is essentially an amount of money you want to spend on particular purpose.
 
-1. Top-up budget
-
-2. Spend budget
-
-3. Delete budget
+You can
+1. Top-up budget - add money to your budget.
+2. Spend budget - spend money from your budget
+3. Delete budget - remove your budget
 
 ### Bill
-
-1. Delete bill
-2. Pay the bill
-3. Reset all bills
+Bill is a liability you are obliged to pay in certain period.
+1. Create a bill
+2. Delete a bill
+3. Pay the bill - removes money from your account which simulates a bank transfer and changes bill status from UNPAID to PAID
+4. Reset all bills - changes the status of all bills to UNPAID
