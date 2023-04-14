@@ -8,6 +8,7 @@ class Account:
         return f"{self.name} : {self.saldo}"
     
     def topUp(self,amount):
+        amount = float(amount)
         self.saldo += amount
     
     def withdraw(self, amount):

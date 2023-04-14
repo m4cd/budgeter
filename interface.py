@@ -16,7 +16,7 @@ Pick action:
     f. Create a bill
     g. Delete bill
     h. Pay the bill
-    i. Reset billing period
+    i. Reset all bills
     j. Print summary
     k. Exit        
 """
@@ -60,7 +60,15 @@ Pick action:
             
             # Spend budget
             case "d":
-                pass
+                try:
+                    name = input("Budget name: ")
+                    print("")
+                    value = input("Budget amount: ")
+                    print("")
+                    value = float(value)
+                    budgeter.spendBudget(name, value)
+                except Exception as e:
+                    print(e)
             
             # Delete budget
             case "e":
@@ -85,15 +93,28 @@ Pick action:
             
             # Delete bill
             case "g":
-                pass
+                try:
+                    name = input("Bill name: ")
+                    print("")
+                    budgeter.deleteBill(name)
+                except Exception as e:
+                    print(e)
             
             # Pay the bill
             case "h":
-                pass
+                try:
+                    name = input("Bill name: ")
+                    print("")
+                    budgeter.payBill(name)
+                except Exception as e:
+                    print(e)
 
             # Reset billing period
             case "i":
-                pass
+                try:
+                    budgeter.resetAllBills()
+                except Exception as e:
+                    print(e)
             
             # Print summary
             case "j":
